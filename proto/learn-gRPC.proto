@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/twaaaadahardeep/learn-gRPC/proto";
+
+package proto;
+
+service Message {
+    rpc GetMessage (User) returns (UserMessage) {}
+}
+
+message User {
+    int32 userId = 1;
+    string name = 2;
+}
+
+message UserMessage {
+    User user = 1;
+    string message = 2;
+}
